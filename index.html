@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    
+    <title>Fotogram</title>
+</head>
+<body onload="init()">
+    <!-- <div id="overlay" onclick="dialogClose()"></div> -->
+        <div class="widescreen">
+            <header class="max-witdh1440">
+                <img class="fotogram_logo" src="./assets/icons/Fotogram_Logo.svg" alt="Fotogram Logo">
+                <div id="image_counter" class="image_counter">
+                </div>
+            </header>
+        </div>
+        <div class="widescreen">
+            <main class="max-witdh1440">
+                <section id="section_dialog" class="section_dialog">
+                    <dialog id="gallery_dialog" class="gallery_dialog">
+                    </dialog>
+                </section>
+                <section id="gallery_area" class="gallery_area">
+
+                </section>
+
+            </main>
+        </div>
+        <div class="widescreen">
+            <footer class="max-witdh1440"></footer>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!--    <div class="dialog_nav-buttons">
+        <button><img class="nav-button" src="./assets/icons/arrow_backward.svg" alt="previous image"></button>
+        <button><img class="nav-button" src="./assets/icons/arrow_forward.svg" alt="next image"></button>
+        </div>
+-->
