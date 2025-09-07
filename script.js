@@ -28,7 +28,35 @@ let images = ["1.jpg",
 "28.jpg",
 ];
 
-
+let images_alt = ["junger mann.jpg",
+"lesendes mädchen.jpg",
+"wolken und mann.jpg",
+"paar am stand.jpg",
+"mädchen auf einer Allee.jpg",
+"mädchen am gleis.jpg",
+"schnee berge.jpg",
+"steinhaus.jpg",
+"kirche von innen.jpg",
+"wald mit sonnenschein.jpg",
+"zug auf einer brücke.jpg",
+"zaun mit brücke.jpg",
+"kirche von innen.jpg",
+"strand bei sonnenuntergang.jpg",
+"eisplatten.jpg",
+"marmor gebäude.jpg",
+"moschee.jpg",
+"straßengasse.jpg",
+"riesenrad.jpg",
+"straße.jpg",
+"belichtetes gebäude bei nacht.jpg",
+"strand bei sonnenuntergang.jpg",
+"mädchen im sonnenblumendfeld.jpg",
+"wolken.jpg",
+"man an der küste.jpg",
+"riesenrad mit rote waggons",
+"frau am stand.jpg",
+"lesende frau.jpg",
+];
 
 
 
@@ -44,8 +72,10 @@ function renderFotos(){
     for(let index = 0; index < 28; index++){
         gallery.innerHTML += `<img  id="image_${index}" 
                                     class="gallery_image" 
-                                    src="./assets/img/gallery/${images[index]}" 
+                                    src="./assets/img/gallery/${images[index]}"
+                                    alt="${images_alt[index]}"
                                     onclick="showImage(${index})"
+                                    tabindex="0"
                              >`;
     }
 
@@ -55,8 +85,9 @@ function showImage(index){
     const requested_dialog = document.getElementById("gallery_dialog");
     // const section_dialog = document.getElementById("section_dialog");
     // section_dialog.classList.remove("d_none");
-    requested_dialog.innerHTML = "";
-    requested_dialog.innerHTML += printDialog(index);
+    const requested_dialog_card = document.getElementById("dialog_card");
+    requested_dialog_card.innerHTML = "";
+    requested_dialog_card.innerHTML += printDialog(index);
     requested_dialog.showModal();
     addEventDialogClose();
     addEventStopPropagation();
@@ -64,83 +95,35 @@ function showImage(index){
 
 //if bedingungen um buttons anzuzeigen anstatt 3 große returnblöcke
 function printDialog(index){
-    if(index == 0){
-        return `<div id="dialog_card" class="dialog_card">
-                <img    class="dialog_image"
+    if(index < 0){
+        index = images.length - 1;
+    }
+    else if(index > images.length - 1){
+        index = 0;
+    }
+        
+    return `<img    class="dialog_image"
                     src="./assets/img/gallery/${images[index]}"
-                >
-                <div class="dialog_nav-buttons">
-                    <button onclick="nextImage(${index})">
-                        <img    class="nav-button" 
-                                src="./assets/icons/arrow_forward.svg" 
-                                alt="next image"
-                                >
-                    </button>
-                    <span>${index+1}/28</span>
-                    <button onclick="nextImage(${index})">
-                        <img    class="nav-button" 
-                                src="./assets/icons/arrow_forward.svg" 
-                                alt="next image"
-                                >
-                    </button>
-                </div>
+            >
+            <div class="dialog_nav-buttons">
+                <button onclick="previousImage(${index})">
+                    <img    class="nav-button" 
+                              src="./assets/icons/arrow_backward.svg"
+                              alt="previous image"
+                    >
+                </button>
+                   <span>${index+1}/28</span>
+                 <button onclick="nextImage(${index})">
+                     <img    class="nav-button" 
+                               src="./assets/icons/arrow_forward.svg" 
+                              alt="next image"
+                     >
+                </button>
+            </div>
+            <button class="dialog_button_close" 
+            onclick="dialogClose()">Schließen</button>
+            `
 
-                <button class="dialog_button_close" 
-                onclick="dialogClose()">Schließen</button>
-                </div>
-                `
-    }
-    else if(index == 27){
-        return `<div id="dialog_card" class="dialog_card">
-                <img    class="dialog_image"
-                    src="./assets/img/gallery/${images[index]}"
-                >
-                <div class="dialog_nav-buttons">
-                    <button onclick="previousImage(${index})">
-                        <img    class="nav-button" 
-                                src="./assets/icons/arrow_backward.svg"
-                                alt="previous image"
-                                >
-                    </button>
-                    <span>${index+1}/28</span>
-                    <button onclick="previousImage(${index})">
-                        <img    class="nav-button" 
-                                src="./assets/icons/arrow_backward.svg"
-                                alt="previous image"
-                                >
-                    </button>
-                </div>
-
-                <button class="dialog_button_close" 
-                onclick="dialogClose()">Schließen</button>
-                </div>
-                `
-    }
-    else{
-        return `<div id="dialog_card" class="dialog_card">
-                <img    class="dialog_image"
-                        src="./assets/img/gallery/${images[index]}"
-                >
-                <div class="dialog_nav-buttons">
-                    <button onclick="previousImage(${index})">
-                        <img    class="nav-button" 
-                                src="./assets/icons/arrow_backward.svg"
-                                alt="previous image"
-                                >
-                    </button>
-                    <span>${index+1}/28</span>
-                    <button onclick="nextImage(${index})">
-                        <img    class="nav-button" 
-                                src="./assets/icons/arrow_forward.svg" 
-                                alt="next image"
-                                >
-                    </button>
-                </div>
-                <button class="dialog_button_close" 
-                onclick="dialogClose()">Schließen</button>
-                </div>
-                `
-    }
 }
 
 function dialogClose(){
