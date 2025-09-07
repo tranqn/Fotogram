@@ -1,16 +1,18 @@
-/* @font-face {
-  font-family: 'WorkSans';
-  src: url('./assets/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf') format('woff2'),
-    url('./assets/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf') format('woff');
-} */
+@font-face {
+  font-family: "SF-Pro";
+  src: url("../assets/fonts/SF-Pro.ttf") format("truetype");
+}
 /* 
 .d_none{
     display: none;
 } */
 
 
-body{
+html,body{
     background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -23,19 +25,33 @@ header {
 
 main{
     padding: 0px 8px 0 8px;
+    display: flex;
+    height: 100%;
 }
 
 footer{
-    padding: 0px 8px 8px 8px;
+    font-family: "SF-Pro";
+    font-size: 14px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    padding: 8px 8px 8px 8px;
 }
+
+/* .fotogram_logo{
+    padding: 4px 4px 4px 0;
+} */
+
 .image_counter{
     color: white;
-    font-family: "WorkSans";
-    font-size: 24px;
+    font-family: "SF-Pro";
+    font-size: 22px;
+    font-weight: 300;
+    padding: 4px 4px 4px 0;
 }
 
 .gallery_area{
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-wrap: wrap;
     gap: 2px;
@@ -43,6 +59,7 @@ footer{
     /* background-color: aqua; */
     overflow: hidden;
     overflow-y: scroll;
+    flex-grow: 1;
 }
 
 .gallery_image{
@@ -146,4 +163,8 @@ dialog::backdrop{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.biggest_div{
+    flex-grow: 1;
 }
