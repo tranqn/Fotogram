@@ -76,6 +76,7 @@ function renderFotos(){
                                     alt="${images_alt[index]}"
                                     onclick="showImage(${index})"
                                     tabindex="0"
+                                    aria-haspopup="dialog"
                              >`;
     }
 
@@ -103,25 +104,30 @@ function printDialog(index){
     }
         
     return `<img    class="dialog_image"
-                    src="./assets/img/gallery/${images[index]}"
-            >
+                    src="./assets/img/gallery/${images[index]}">
             <div class="dialog_nav-buttons">
-                <button onclick="previousImage(${index})">
+                <button onclick="previousImage(${index})"
+                        aria-controls="gallery_dialog">
                     <img    class="nav-button" 
                               src="./assets/icons/arrow_backward.svg"
                               alt="previous image"
-                    >
+                              aria-label="vorheriges bild">
                 </button>
                    <span>${index+1}/28</span>
-                 <button onclick="nextImage(${index})">
+                 <button onclick="nextImage(${index})"
+                         aria-controls="gallery_dialog"
+                         aria-label="nächstes bild">
                      <img    class="nav-button" 
                                src="./assets/icons/arrow_forward.svg" 
-                              alt="next image"
-                     >
+                              alt="next image">
                 </button>
             </div>
             <button class="dialog_button_close" 
-            onclick="dialogClose()">Schließen</button>
+                    onclick="dialogClose()"
+                    aria-controls="gallery_dialog"
+                    aria-label="dialog schließen">
+                Schließen
+            </button>
             `
 
 }

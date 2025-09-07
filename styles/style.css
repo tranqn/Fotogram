@@ -15,6 +15,15 @@ html,body{
     flex-direction: column;
 }
 
+.widescreen{
+    display: flex;
+    justify-content: center;
+}
+
+.max-witdh1440{
+    width: 1440px;
+}
+
 header {
     padding: 8px 8px 0 8px;
 
@@ -37,10 +46,6 @@ footer{
     align-items: center;
     padding: 8px 8px 8px 8px;
 }
-
-/* .fotogram_logo{
-    padding: 4px 4px 4px 0;
-} */
 
 .image_counter{
     color: white;
@@ -73,6 +78,12 @@ footer{
 
 .gallery_image:hover {
     filter: brightness(1.3);
+}
+
+.dialog_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dialog_image{
@@ -117,12 +128,6 @@ dialog::backdrop{
     margin-top: 20px;
 }
 
-.section_dialog{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .dialog_nav-buttons{
     margin-top: 20px;
     display: flex;
@@ -135,36 +140,4 @@ dialog::backdrop{
         justify-content: center;
         align-items: center;
     }
-}
-
-.gallery_edge{
-    justify-content: center;
-}
-
-.max-witdh1440{
-    width: 1440px;
-}
-
-.widescreen{
-    display: flex;
-    justify-content: center;
-}
-
-/* .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-} */
-
-.dialog_card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.biggest_div{
-    flex-grow: 1;
 }
