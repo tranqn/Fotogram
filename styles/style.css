@@ -98,9 +98,6 @@ footer{
     .dialog_image{
         width: 70vw;
     }
-    .gallery_dialog {
-        width: 80vw;
-    }
 }
 
 dialog[open] {
