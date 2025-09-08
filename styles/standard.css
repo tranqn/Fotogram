@@ -6,3 +6,7 @@ html, body{
 a{
     text-decoration: none;
 }
+
+img:hover, button {
+    cursor: pointer;
+}

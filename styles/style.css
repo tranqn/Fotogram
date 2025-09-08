@@ -2,11 +2,6 @@
   font-family: "SF-Pro";
   src: url("../assets/fonts/SF-Pro.ttf") format("truetype");
 }
-/* 
-.d_none{
-    display: none;
-} */
-
 
 html,body{
     background-color: black;
@@ -43,7 +38,7 @@ footer{
     font-size: 14px;
     font-weight: 100;
     display: flex;
-    align-items: center;
+    justify-content: center;
     padding: 8px 8px 8px 8px;
 }
 
@@ -84,6 +79,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .dialog_image{
@@ -94,8 +90,6 @@ footer{
 @media (orientation: landscape) {
     .dialog_image{
         height: 70vh;
-        aspect-ratio: 1/1;
-        object-fit: cover;
     }
 }
 
@@ -103,8 +97,6 @@ footer{
 @media (orientation: portrait) {
     .dialog_image{
         width: 70vw;
-        aspect-ratio: 1/1;
-        object-fit: cover;
     }
     .gallery_dialog {
         width: 80vw;
@@ -124,12 +116,7 @@ dialog::backdrop{
     background-color: rgba(0, 0, 0, 0.775);
 }
 
-.dialog_button_close{
-    margin-top: 20px;
-}
-
 .dialog_nav-buttons{
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,5 +126,19 @@ dialog::backdrop{
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: white;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.312) 1px 1px 4px;
     }
+}
+
+.dialog_close-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.312) 1px 1px 4px;
+    padding: 0 16px;
 }
