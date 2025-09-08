@@ -114,6 +114,7 @@ dialog[open] {
 
 dialog::backdrop{
     background-color: rgba(0, 0, 0, 0.775);
+    cursor: pointer;
 }
 
 .dialog_nav-buttons{
